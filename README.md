@@ -1,75 +1,60 @@
 # 🛠️ RFX by Reach - Windows Repair & Cleanup (v1.4)
 
-![Version](https://img.shields.io/badge/Version-2.1-orange?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.4-F7931E?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=for-the-badge&logo=windows)
-![Language](https://img.shields.io/badge/Language-PowerShell%20%7C%20Batch-5391FE?style=for-the-badge&logo=powershell)
-![License](https://img.shields.io/badge/Developed%20by-Reach%20Studio-0B1B3A?style=for-the-badge)
+![Language](https://img.shields.io/badge/PowerShell-WinForms%20GUI-5391FE?style=for-the-badge&logo=powershell)
+![Developer](https://img.shields.io/badge/Developed%20by-Reach%20Studio-0B1B3A?style=for-the-badge)
 
-**RFX by Reach** is a lightweight, portable, all-in-one Windows optimization, deep cleanup, and system repair utility developed by **Reach Studio**. Built with a modern High-DPI graphical interface, it requires **no installation**, automatically elevates to Administrator privileges, and provides a complete safety net before making any system changes.
-
----
-
-## ✨ Key Highlights
-
-* 🛡️ **Safety First (Auto System Restore Point):** Automatically creates a Windows System Restore Point before running any cleanup or repair tasks, bypassing the default 24-hour Windows frequency restriction.
-* 🔍 **Scan Before Clean (Dry-Run Mode):** Calculates and displays the exact amount of disk space (in MB/GB) that will be freed from each category without deleting a single file, giving you full control and confidence.
-* 🌐 **Bilingual Interface (Arabic / English):** Instant one-click language switching between Arabic (`عربي`) and English.
-* ⏱️ **Live Timer & Dynamic ETA:** Real-time elapsed timer and intelligent Estimated Time Remaining (ETA) calculator based on task weights and live system speed.
-* 💚 **Real-Time SMART Disk Health Monitor:** Reads drive hardware S.M.A.R.T. status on startup and warns you immediately if potential disk failure is predicted.
-* 🚀 **100% Portable:** Runs directly from a single `.bat` script or compiled standalone `.exe` with zero dependencies.
+**RFX by Reach (v1.4)** is a portable, single-file Windows maintenance, deep cleanup, and system repair utility developed by **Reach Studio**. Designed with a crisp High-DPI dark navy & orange interface, it requires **no installation**, auto-elevates to Administrator privileges, and includes built-in safety mechanisms.
 
 ---
 
-## 🧹 Cleanup & Space Recovery Tools
+## ✨ What's New in v1.4
 
-1. **Temporary Files Cleanup:** Safely wipes `%TEMP%`, `%TMP%`, `Windows\Temp`, `Prefetch`, and all user/service profile temp directories while skipping locked files in use.
-2. **Deep System Cache & Recycle Bin:** Cleans Windows Update download caches (`SoftwareDistribution`), Delivery Optimization cache, Windows Error Reporting (`WER`), crash dumps, Explorer thumbnail/icon caches, GPU shader caches (`NVIDIA`, `AMD`, `Intel`), and empties the Recycle Bin across all fixed drives.
-3. **Safe Browser Cache Cleaner:** Clears gigabytes of cached data (`Cache`, `Code Cache`, `GPUCache`, `Service Worker`) for **Google Chrome, Microsoft Edge, Mozilla Firefox, Brave, Opera, Opera GX, and Vivaldi** — **without touching your passwords, cookies, history, or bookmarks**.
-4. **Windows.old & Hibernation Remover (10–30 GB Saver):** Deletes leftover `Windows.old` directories and disables `hiberfil.sys` (with separate user confirmation) to reclaim massive disk space.
-5. **Disk Space Analyzer (Top 10 Folders):** Scans the system drive and lists the top 10 largest folders consuming your storage.
-
----
-
-## 🔧 System Repair & Management Tools
-
-6. **Windows Update Component Reset:** Stops update services (`wuauserv`, `bits`, `cryptSvc`, `msiserver`), resets `SoftwareDistribution` and `catroot2` folders, and restarts services to fix stuck updates.
-7. **Network & Internet Repair:** Resets Winsock catalog, resets the TCP/IP stack, clears ARP/NetBIOS caches, and flushes the DNS resolver cache.
-8. **Microsoft Store Reset:** Executes `WSReset` silently and clears corrupted Store cache.
-9. **Startup Programs Manager:** Built-in interactive dialog to view, enable, or disable startup applications (`HKCU` & `HKLM`) to speed up Windows boot time.
-10. **Windows Event Logs Cleaner:** Clears all system event logs via `wevtutil` (with safety confirmation).
-11. **DISM Image Repair:** Runs `DISM /RestoreHealth` followed by `/StartComponentCleanup` (`WinSxS` cleanup) with live progress tracking.
-12. **System File Checker (SFC):** Runs `sfc /scannow` to verify and repair corrupted protected Windows system files.
-13. **Disk Error Check (CHKDSK):** Schedules `chkdsk /f /r` on the system drive for the next system restart.
+* 🛡️ **Pre-Run System Restore Point:** Automatically creates a restore point (`"RFX by Reach - before cleanup"`) before executing system changes, temporarily bypassing Windows' 24-hour restore point frequency limit.
+* 🔍 **Preview (Scan) Mode with Detailed Breakdown:** Scans selected cleanup categories without deleting anything, then opens a sorted summary report showing exact sizes and file counts per item.
+* ⏱️ **Hardware-Aware Time Estimates (SSD / HDD) & Live Timer:** Automatically detects whether your system drive is an SSD or HDD and displays realistic time/size estimates on every task card, plus a live countdown timer during execution.
+* 🌐 **Full Bilingual UI (English / Arabic with RTL Mirroring):** Instant language toggle that saves your preference and mirrors card layouts for natural Right-to-Left Arabic reading.
+* 🗂️ **Organized 3-Tab Interface:** Cleanly separated into **Cleanup**, **Repair**, and **Tools** tabs with live selected-task counters.
 
 ---
 
-## 🚀 How to Use
+## 🧹 Tab 1: Cleanup (`التنظيف`)
 
-### Option 1: Run Portable Script Directly
-1. Download `RFX.bat` and `RFX.ico` into the same folder.
-2. Double-click **`RFX.bat`** (it will automatically request Administrator privileges).
-3. Click **"Scan Before Clean"** to preview reclaimable space, or **"Run Selected"** to execute your chosen tasks.
-
-### Option 2: Build Standalone `RFX.exe`
-1. Place `RFX.bat`, `RFX.ico`, and `Build_EXE.bat` in the same directory.
-2. Run **`Build_EXE.bat`**.
-3. The script will automatically fetch `ps2exe` (first time only), compile **`RFX.exe`** with High-DPI awareness and Admin manifest, and apply a self-signed digital signature (`Reach Studio`).
+1. **Clean Temp Files (`%TEMP%`, Windows Temp, Prefetch):** Cleans all user profile temp directories, Windows Temp, Prefetch, service profile temp folders (`LocalService`, `NetworkService`, `SystemProfile`), and legacy temp files while safely skipping locked files.
+2. **Deep System Cleanup:** Pauses update/print services safely, cleans Windows Update download cache, Delivery Optimization cache, Print Spooler queue, CBS/DISM/Update logs, Minidumps, LiveKernelReports, Windows Error Reporting (`WER`), GPU Shader caches (`DirectX`, `NVIDIA`, `AMD`, `Intel`), Store temp states, Explorer thumbnail/icon caches, empties the Recycle Bin, and flushes DNS.
+3. **Clear Browser Caches:** Wipes cache, Code Cache, GPUCache, and Service Worker caches across all profiles for **Chrome, Edge, Firefox, Brave, Opera, Opera GX, Vivaldi, and Chromium** — *passwords, cookies, history, and bookmarks are never touched*.
+4. **Clear Windows Event Logs:** Clears all Windows Event Logs via `wevtutil` (with confirmation and log count preview).
+5. **Remove `Windows.old`:** Measures and permanently removes `Windows.old`, `$WINDOWS.~BT`, and `$WINDOWS.~WS` upgrade leftovers (often reclaiming 10–30 GB) after explicit confirmation.
+6. **Remove Hibernation File (`hiberfil.sys`):** Measures `hiberfil.sys` and disables hibernation (`powercfg /hibernate off`) after user confirmation.
 
 ---
 
-## 🔄 Auto-Update Support
-RFX includes a built-in **"Check Updates"** button that compares the current build version against `version.txt` hosted on this repository (`https://raw.githubusercontent.com/<YourUsername>/<RepoName>/main/version.txt`).
+## 🔧 Tab 2: Repair (`الإصلاح`)
 
-> **Note for Repository Setup:** Create a file named `version.txt` in the root of your repository containing only the latest version number (e.g., `1.4`).
-
----
-
-## 👨‍💻 Author & Credits
-
-* **Developed by:** **Reach Studio**
-* **Follow us on Facebook:** [Reach Studio on Facebook](https://www.facebook.com/ReachVocals)
+7. **Repair Windows Image (`DISM`):** Runs `DISM /Online /Cleanup-Image /RestoreHealth` followed by `/StartComponentCleanup` (`WinSxS` store cleanup) with real-time progress ring tracking.
+8. **Scan & Repair System Files (`SFC`):** Executes `sfc /scannow` with live percentage parsing.
+9. **Fix Windows Update:** Stops update services (`wuauserv`, `bits`, `cryptsvc`, `msiserver`), clears `SoftwareDistribution\Download`, `DataStore`, `catroot2`, and BITS `qmgr*.dat` queues, then restarts services.
+10. **Repair Network:** Flushes DNS, resets Winsock catalog, resets TCP/IP stack, releases & renews IP address, and re-registers DNS.
+11. **Reset Microsoft Store:** Runs `wsreset.exe` and re-registers `Microsoft.WindowsStore`, `StorePurchaseApp`, and `DesktopAppInstaller` packages.
+12. **Check & Repair Disk Errors (`CHKDSK`):** Schedules `chkdsk /f /r` on the system drive for the next restart.
 
 ---
 
-## ⚠️ Disclaimer
-This tool performs system-level maintenance and cleanup operations. While RFX automatically creates a System Restore Point before running and strictly avoids deleting personal user documents or browser passwords, please review selected tasks (such as `Windows.old` removal or `Event Logs` clearing) before confirming.
+## 🧰 Tab 3: Tools (`الأدوات`)
+
+13. **Disk Space Analyzer:** Scans the system drive (ignoring junctions/symlinks) and displays a report of the **Top 10 Largest Folders**, top-level directories, and root system files.
+14. **Startup Programs Manager:** Reads registry (`HKCU`/`HKLM` Run & `WOW6432Node`) and Startup folders, allowing you to enable or disable startup items using Windows Explorer's native `StartupApproved` binary state (fully reversible and synced with Task Manager).
+15. **Disk Health Check (`SMART`):** Queries physical disks (`Get-PhysicalDisk`, `Get-StorageReliabilityCounter`, and WMI `MSStorageDriver_FailurePredictStatus`) to report health status, temperature, SSD wear percentage, power-on hours, and uncorrected read errors.
+
+---
+
+## 🚀 Usage & Building `RFX.exe`
+
+* **Run Directly:** Double-click `RFX.bat` (auto-elevates to Admin).
+* **Compile Standalone EXE:** Run `Build_EXE.bat` with `RFX.bat` and `RFX.ico` in the same folder to generate `RFX.exe` v1.4.0.0.
+
+---
+
+## 👨‍💻 Developed by Reach Studio
+* **Facebook:** [Follow Reach Studio on Facebook](https://www.facebook.com/ReachVocals)
