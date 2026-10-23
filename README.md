@@ -1,4 +1,4 @@
-# 🛠️ RFX by Reach - Windows Repair & Cleanup (v2.1)
+# 🛠️ RFX by Reach - Windows Repair & Cleanup (v1.4)
 
 ![Version](https://img.shields.io/badge/Version-2.1-orange?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011-0078D6?style=for-the-badge&logo=windows)
@@ -60,7 +60,7 @@
 ## 🔄 Auto-Update Support
 RFX includes a built-in **"Check Updates"** button that compares the current build version against `version.txt` hosted on this repository (`https://raw.githubusercontent.com/<YourUsername>/<RepoName>/main/version.txt`).
 
-> **Note for Repository Setup:** Create a file named `version.txt` in the root of your repository containing only the latest version number (e.g., `2.1`).
+> **Note for Repository Setup:** Create a file named `version.txt` in the root of your repository containing only the latest version number (e.g., `1.4`).
 
 ---
 
